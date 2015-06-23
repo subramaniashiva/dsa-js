@@ -1,3 +1,4 @@
+'use strict';
 // This program check whehter the given number is prime or not
 console.log('Prime number checker program');
 var readline = require('readline');
@@ -5,7 +6,7 @@ var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-rl.question('Enter your number', function(answer) {
+rl.question('Enter your number\n', function(answer) {
     console.log(isPrime(answer));
     rl.close();
 });
