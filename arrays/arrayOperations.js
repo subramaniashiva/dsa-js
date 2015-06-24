@@ -3,12 +3,15 @@ console.log('Array operations');
 var prompt = require('prompt');
 var myArray = [];
 console.log('Enter size of Array');
+// prmopting the user to enter the size of the array
 prompt.start();
 prompt.get('number', function(err, arraySize) {
+    // This function gets user input for the array
     function getAnother() {
         prompt.get('number', function(err, result) {
-            if (err) done();
-            else {
+            if (err) {
+                console.log('Error in user input. ', err);
+            } else {
                 myArray.push(parseInt(result.number, 10));
                 if (myArray.length < arraySize) {
                     getAnother();
@@ -28,10 +31,6 @@ prompt.get('number', function(err, arraySize) {
         console.log('Invalid input');
     }
 });
-
-function done() {
-    console.log('Done');
-}
 
 function printArray() {
     console.log('Your array is ', myArray);
@@ -70,7 +69,7 @@ function doOperations() {
                 printArray();
                 doOperations();
             } else {
-
+              console.log('Program ended');
             }
         }
     });
