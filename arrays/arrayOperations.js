@@ -1,3 +1,12 @@
+/*
+  Problem Statement : 
+  Get an array from user and store it.
+  Perform the following operations on the array without iterating the array
+  * Add an element to the end of the array
+  * Add an element to the beginning of the array
+  * Remove an element from the end of the array
+  * Remove an element from the beginning of the array
+*/
 'use strict';
 console.log('Array operations');
 var prompt = require('prompt');
