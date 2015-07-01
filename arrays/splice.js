@@ -10,27 +10,29 @@
 */
 'use strict';
 Array.prototype.mySplice = function() {
-  var resultArray = [];
-  var begin = arguments[0],
-      numOfElems;
-  if(typeof begin === 'undefined') {
-    begin = 0;
-  }
-  if(arguments[1]) {
-    numOfElems = arguments[1];
-  }
-  if(numOfElems > 0) {
-    for(var i = begin; i < this.length - numOfElems; i++) {
-      resultArray.push(this[i]);
-      this[i] = this[i+numOfElems];
+    var resultArray = [];
+    var begin = arguments[0],
+        numOfElems;
+    if (typeof begin === 'undefined') {
+        begin = 0;
+    } else if (begin < 0) {
+        begin = this.length + begin;
     }
-    this.length -= numOfElems;
-  }
-  return resultArray;
+    if (arguments[1]) {
+        numOfElems = arguments[1];
+    }
+    if (numOfElems > 0) {
+        for (var i = begin, j = 0;
+            (j < numOfElems && i < this.length); i++, j++) {
+            resultArray.push(this[i]);
+            this[i] = this[i + numOfElems];
+        }
+        this.length -= numOfElems;
+    }
+    return resultArray;
 }
 var myArray = [1, 2, 3, 4, 5, 6, 7];
-var newArray = myArray.mySplice(3, 2);
-//var origSlice = myArray.splice(3, 2);
+var newArray = myArray.mySplice(-6, 3);
+//var newArray = myArray.splice(-6, 3);
 console.log('Values in Array ', myArray);
 console.log('Sliced Array ', newArray);
-//console.log('Original Slice ', origSlice);
