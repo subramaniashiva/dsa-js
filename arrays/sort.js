@@ -7,22 +7,24 @@
 */
 'use strict';
 Array.prototype.mySort = function(compareFunction) {
-    var temp;
+    var temp, i, j;
+    // If there is no compare function, convert array elements to string and sort
     if (!compareFunction) {
         compareFunction = function(a, b) {
             if (a.toString() > b.toString()) {
-                return -1;
-            } else if (a.toString() > b.toString()) {
                 return 1;
+            } else if (a.toString() < b.toString()) {
+                return -1;
             } else {
                 return 0;
             }
         }
     }
     // Fix me: Not an efficient algorithm to sort
-    for (var i = 0; i < this.length; i++) {
-        for (var j = i + 1; j < this.length; j++) {
-            if (compareFunction(this[i], this[j]) < 0) {
+    for (i = 0; i < this.length; i++) {
+        for (j = i + 1; j < this.length; j++) {
+            // Swap the elements only if compare functions return 1 or more
+            if (compareFunction(this[i], this[j]) > 0) {
                 temp = this[i];
                 this[i] = this[j];
                 this[j] = temp;
@@ -31,9 +33,9 @@ Array.prototype.mySort = function(compareFunction) {
     }
     return this;
 }
-var myArray = [20, 1, 2, 3, 4];
+var myArray = [1,23, 24, 5, 2, 1];
 function numberCompare(a, b) {
-  return b - a;
+  return a - b;
 }
 myArray.mySort(numberCompare);
 console.log('Values in Array ', myArray);
