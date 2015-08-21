@@ -3,7 +3,14 @@
   var chatBox = document.getElementById('chat'),
       status = document.getElementById('status');
 
+  
+
   chatBox.addEventListener('keyup', function(){
-    status.innerHTML = 'User is typing';
+    if(chatBox.value) {
+      status.innerHTML = 'User is typing';
+    }
+    else {
+      status.innerHTML = 'User has stopped typing';
+    }
   });
 })();
