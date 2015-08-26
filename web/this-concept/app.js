@@ -16,5 +16,5 @@ var personObj = new Person('Siva', 20);
 console.log(personObj.toString());
 
 var faultyObj = Person('John', 30);
-//console.log(faultyObj.toString());
+console.log(faultyObj);
 console.log(this.name);
