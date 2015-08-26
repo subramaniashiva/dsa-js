@@ -5,6 +5,8 @@
 */
 
 var myApp = (function(){
+  // Closure variable available to functions even after the 
+  // main function is executed
   var name = '';
   return {
     getName: function() {
