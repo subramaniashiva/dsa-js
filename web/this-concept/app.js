@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 /*
   Problem Statement
   Explain this using simple program
@@ -16,4 +16,5 @@ var personObj = new Person('Siva', 20);
 console.log(personObj.toString());
 
 var faultyObj = Person('John', 30);
-console.log(faultyObj.toString());
+//console.log(faultyObj.toString());
+console.log(this.name);
