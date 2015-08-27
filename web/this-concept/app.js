@@ -18,3 +18,12 @@ console.log(personObj.toString());
 var faultyObj = Person('John', 30);
 console.log(faultyObj);
 console.log(this.name);
+
+var obj = {
+  name: 'Obj Name',
+  print: function() {
+    console.log(this.name);
+  }
+};
+
+obj.print();
