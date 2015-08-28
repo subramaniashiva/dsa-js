@@ -27,3 +27,14 @@ var obj = {
 };
 
 obj.print();
+
+var parentObj = {
+  childObj: {
+    name: 'ChildObj',
+    print: function() {
+      console.log(this.name);
+    }
+  }
+}
+
+parentObj.childObj.print();
