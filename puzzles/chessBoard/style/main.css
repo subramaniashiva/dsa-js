@@ -1,0 +1,43 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+}
+.header {
+  margin-bottom: 10px;
+}
+.txt-input {
+  width: 250px;
+  padding: 7px;
+}
+#chess-board {
+  width: 100%;
+  height: auto;
+}
+.white, .black {
+  height: 12.5vh;
+  min-width: 20px;
+  min-height: 50px;
+  border: 1px solid #ccc;
+  float: left;
+  box-sizing: border-box;
+  position: relative;
+}
+.piece {
+  color: red;
+  width: 10px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  margin-top: -9px;
+  left: 50%;
+  margin-left: -5px;
+}
+/*.square:nth-child(8n+1) {
+  clear: both;
+}*/
+.black {
+  background: #000;
+}
