@@ -64,6 +64,8 @@ function readJSONPromise(filename) {
 console.log('\nAsynchronous file read using Promise');
 console.log('Some operation before file read');
 var promiseObj = readJSONPromise('data.json');
+// Uncomment the below line to trigger the reject state of promise
+// var promiseObj = readJSONPromise('errorFile.json');
 console.log('Some operation after file read');
 console.log('File contents from Promise read: ');
-promiseObj.then(console.log);
+promiseObj.then(console.log, console.error);
