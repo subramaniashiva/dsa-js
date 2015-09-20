@@ -19,7 +19,7 @@ function getRandomNumber(lower, upper, includeBounds) {
     if(includeBounds) {
 		  random = (Math.random() * (upper - lower + 1)) + lower;
     } else {
-      random = (Math.random() * (upper - lower)) + lower;
+      random = (Math.random() * (upper - lower - 1)) + lower + 1;
     }
 		random = parseInt(random, 10);
 	} else {
@@ -28,4 +28,4 @@ function getRandomNumber(lower, upper, includeBounds) {
 	return random;
 }
 
-console.log(getRandomNumber(3, 5, false));
+console.log(getRandomNumber(3, 5, true));
