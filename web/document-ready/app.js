@@ -12,10 +12,11 @@ function domReady(callback, context) {
 		});
 	}
 }
-var a =1, b =0, c = 3;
+var a =1, b =2, c = 3;
 domReady(function(d, e, f) {
 	console.log(d, e, f);
 }, undefined, a, b, c);
+
 // This can also be used
 /*document.addEventListener('readystatechange', function() {
 	var state = document.readyState;
