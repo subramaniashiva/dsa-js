@@ -5,11 +5,11 @@
 */
 
 function removeDuplicate(array) {
-	var removed;
-	for(var i = 0; i < array.length; i++) {
-		for(var j = i +1; j < array.length; j++) {
+	var i, j;
+	for(i = 0; i < array.length; i++) {
+		for(j = i +1; j < array.length; j++) {
 			if(array[i] === array[j]) {
-				removed = array.splice(j, 1);
+				array.splice(j, 1);
 				j = j -1;
 			}
 		}
