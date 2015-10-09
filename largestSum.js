@@ -5,6 +5,12 @@
 */
 function largestSumOfTwo(array) {
 	var result;
+	if(array.length > 1) {
+		result = array[0] + array[1];
+		for(var i = 2; i < array.length; i++) {
+			
+		}
+	}
 	return result;
 }
 
