@@ -7,8 +7,12 @@ function largestSumOfTwo(array) {
 	var result;
 	if(array.length > 1) {
 		result = array[0] + array[1];
-		for(var i = 2; i < array.length; i++) {
-			
+		for(var i = 0; i < array.length; i++) {
+			for(var j = i + 1; j < array.length; j++) {
+				if(array[i] + array[j] > result) {
+					result = array[i] + array[j];
+				}
+			}
 		}
 	}
 	return result;
