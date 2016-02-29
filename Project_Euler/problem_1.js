@@ -8,6 +8,7 @@
 function sumOfMultiples(numbersArray, upperLimit) {
   let sum = 0;
 	for(let i = 0; i < upperLimit; i++) {
+    // Array.some() method returns tue if any of the element in array solves the condition
     if(numbersArray.some((element) => 
       i%element === 0
     )) {
