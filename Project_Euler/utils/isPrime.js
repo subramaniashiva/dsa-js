@@ -1,6 +1,6 @@
 'use strict';
 // Function to check whether the given number is prime number or not
-exports.isPrime  = function(number) {
+module.exports  = function(number) {
   let prime = false,
       i, numSqrt = Math.sqrt(number);
   // Check if the number is an integer. If not return false

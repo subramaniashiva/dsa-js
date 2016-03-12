@@ -7,7 +7,7 @@
 
   Find the sum of all the primes below two million.
 */
-var isPrime = require('./utils/isPrime.js').isPrime;
+var isPrime = require('./utils/isPrime.js');
 
 function sumOfAllPrimes(max) {
   let sum = 0;
