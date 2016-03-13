@@ -38,10 +38,8 @@ function greatestProduct(grid, count = 4) {
   // From left to right
   for(let i = 0; i < grid.length; i++) {
     for(let j = 0; j < grid[i].length; j++) {
-      console.log('Multiplying with ', grid[i][j]);
       localProduct = parseInt(grid[i][j], 10);
-      for(let k = j + 1, maxNum = 0; k < grid[i].length && maxNum < count-1; k++, maxNum++) {
-        console.log('current diagonal elem is ', grid[i][k]);
+      for(let k = j + 1, maxNum = 0; j + count - 1 < grid[i].length && maxNum < count-1; k++, maxNum++) {
         localProduct *= parseInt(grid[i][k], 10);
       }
       if(localProduct > bigProduct) {
@@ -49,14 +47,11 @@ function greatestProduct(grid, count = 4) {
       }
     }
   }
-  console.log('current big proeuct is ', bigProduct);
   // From top to bottom
   for(let i = 0; i < grid.length; i++) {
     for(let j = 0; j < grid[i].length; j++) {
       localProduct = parseInt(grid[i][j], 10);
-      //console.log('Multiplying with ', grid[i][j]);
-      for(let k = j + 1, maxNum = 0; i + maxNum + 1 < grid[i].length && maxNum < count-1; k++, maxNum++) {
-        //console.log('current diagonal elem is ', grid[i + maxNum +1][j]);
+      for(let k = j + 1, maxNum = 0; i + count -1 < grid[i].length && maxNum < count-1; k++, maxNum++) {
         localProduct *= parseInt(grid[i + maxNum + 1][j], 10);
       }
       if(localProduct > bigProduct) {
@@ -64,23 +59,30 @@ function greatestProduct(grid, count = 4) {
       }
     }
   }
-  console.log('current big proeuct is ', bigProduct);
-  // Diagonal
-  for(let i = 0; i < grid.length; i++) {
+  // Top Diagonal
+  for(let i = 0; i < grid.length - count + 1; i++) {
     for(let j = 0; j < grid[i].length; j++) {
       localProduct = parseInt(grid[i][j], 10);
-      //console.log('Multiplying with ', grid[i][j]);
-      for(let k = j + 1, maxNum = 0; i + maxNum + 1 < grid[i].length && k < grid[i].length && maxNum < count-1; k++, maxNum++) {
-        //console.log('current diagonal elem is ', grid[i + maxNum + 1][k]);
+      for(let k = j + 1, maxNum = 0; i + count - 1 < grid[i].length && maxNum < count-1; k++, maxNum++) {
         localProduct *= parseInt(grid[i + maxNum + 1][k], 10);
       }
-      //console.log('end of diagonal', localProduct);
       if(localProduct > bigProduct) {
         bigProduct = localProduct;
       }
     }
   }
-  console.log('current big proeuct is ', bigProduct);
+  // Bottom Diagonal
+  for(let i = 0; i < grid.length - count +1; i++) {
+    for(let j = grid[i].length - 1; j >= 0; j--) {
+      localProduct = parseInt(grid[i][j], 10);
+      for(let k = j - 1, maxNum = 0; j - count + 1 >= 0 && maxNum < count-1; k--, maxNum++) {
+        localProduct *= parseInt(grid[i + maxNum + 1][k], 10);
+      }
+      if(localProduct > bigProduct) {
+        bigProduct = localProduct;
+      }
+    }
+  }
   return bigProduct;
 }
 var grid = [[08,02,22,97,38,15,00,40,00,75,04,05,07,78,52,12,50,77,91,08],
