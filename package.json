@@ -1,0 +1,25 @@
+{
+  "name": "dsa-js",
+  "version": "1.0.0",
+  "description": "* * *",
+  "main": "alphabetOrder.js",
+  "dependencies": {
+    "big-number": "^0.4.0",
+    "promise": "^7.0.4",
+    "prompt": "^0.2.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subramaniashiva/dsa-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subramaniashiva/dsa-js/issues"
+  },
+  "homepage": "https://github.com/subramaniashiva/dsa-js#readme"
+}
