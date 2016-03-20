@@ -13,7 +13,7 @@ var BigNumber = require('big-number');
 
 // Add numbers in an array
 let addDigits = (numberArray) => {
-  return number.reduce((prev, current) => (parseInt(prev, 10) + parseInt(current, 10)), 0);
+  return numberArray.reduce((prev, current) => (parseInt(prev, 10) + parseInt(current, 10)), 0);
 }
 
 var number = BigNumber(2).pow(1000).number;
