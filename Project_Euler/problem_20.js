@@ -16,7 +16,16 @@ var BigNumber = require('big-number');
 
 // Add numbers in an array
 let addDigits = (numberArray) => {
-  return number.reduce((prev, current) => (parseInt(prev, 10) + parseInt(current, 10)), 0);
+  return numberArray.reduce((prev, current) => (parseInt(prev, 10) + parseInt(current, 10)), 0);
 }
-
-console.log(addDigits(number));
+// Factorial function for big numbers
+let factorial = (bigNumber) => {
+  bigNumber = bigNumber.number.reverse().join('');
+  if(parseInt(bigNumber, 10) === 1) {
+    return 1;
+  } else {
+    return BigNumber(bigNumber).mult(factorial(BigNumber(bigNumber).minus(1)));
+  }
+}
+var numArray = factorial(BigNumber('100'));
+console.log(addDigits(numArray.number));
